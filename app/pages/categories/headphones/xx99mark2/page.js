@@ -1,0 +1,189 @@
+"use client"
+import React, { useState } from 'react';
+import Link from 'next/link'
+import { ShoppingCart, Plus, Minus, ChevronLeft } from 'lucide-react';
+import Nav from "@/app/components/Navbar"
+import Footer from '@/app/components/Footer';
+import About from '@/app/components/About';
+import Category from '@/app/components/category';
+
+export default function AudiophileProductPage() {
+  const [quantity, setQuantity] = useState(1);
+
+  const incrementQuantity = () => setQuantity(q => q + 1);
+  const decrementQuantity = () => setQuantity(q =>  q - 1);
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+    <Nav />
+
+      {/* Breadcrumb */}
+      <div className="container mx-auto px-4 py-6">
+        <ChevronLeft size={16} className="ml-1" />
+        <Link href="/" className="text-gray-400 text-sm hover:text-gray-600">Go Back</Link>
+      </div>
+
+      {/* Product Section */}
+      <section className="container mx-auto px-4 py-8">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Product Image */}
+          <div className="bg-gray-100 rounded-lg p-12 flex items-center justify-center">
+            <img 
+              src="/assets/image-removebg-preview(47).png" 
+              alt="XX99 MARK II Headphones"
+              className="w-full max-w-md object-contain"
+            />
+          </div>
+
+          {/* Product Info */}
+          <div className="space-y-6">
+            <p className="text-orange-400 text-sm tracking-widest">NEW PRODUCT</p>
+            <h1 className="text-4xl text-black md:text-5xl font-bold tracking-wider">
+              XX99 MARK II<br />HEADPHONES
+            </h1>
+            <p className="text-gray-600 leading-relaxed">
+              The new XX99 Mark II headphones is the pinnacle of pristine audio. 
+              It redefines your premium headphone experience by reproducing the 
+              balanced depth and precision of studio-quality sound.
+            </p>
+            <p className="text-2xl text-black font-bold">$ 2,999</p>
+            
+            {/* Quantity and Add to Cart */}
+            <div className="flex gap-4">
+              <div className="flex items-center bg-gray-100">
+                <Link href="">
+                <button 
+                  onClick={decrementQuantity}
+                  className="px-4 cursor-pointer text-black py-3 hover:text-orange-400 transition"
+                  >
+                  <Minus size={16} />
+                </button>
+                  </Link>
+                <span className="px-6 py-3 text-black font-bold">{quantity}</span>
+                <button 
+                  onClick={incrementQuantity}
+                  className="px-4 cursor-pointer py-3 text-black hover:text-orange-400 transition"
+                >
+                  <Plus size={16} />
+                </button>
+              </div>
+              <Link href="/components/cart">
+              <button className="bg-orange-400 cursor-pointer hover:bg-orange-500 text-white px-8 py-3 font-bold tracking-wider transition">
+                ADD TO CART
+              </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features and In The Box */}
+      <section className="container mx-auto px-4 py-16">
+        <div className="grid md:grid-cols-2 gap-12">
+          {/* Features */}
+          <div>
+            <h2 className="text-3xl text-black font-bold mb-6 tracking-wider">FEATURES</h2>
+            <div className="space-y-4 text-gray-600 leading-relaxed">
+              <p>
+                Featuring a genuine leather head strap and premium earcups, these 
+                headphones deliver superior comfort for those who like to enjoy 
+                endless listening. It includes intuitive controls designed for any 
+                situation. Whether you're taking a business call or just in your own 
+                personal space, the auto on/off and pause features ensure that you'll 
+                never miss a beat.
+              </p>
+              <p>
+                The advanced Active Noise Cancellation with high-quality integrated 
+                microphone allows you to enjoy your audio content in any environment, 
+                whether you're at a café, on the move, or in your own room. It's your 
+                perfect companion for all your devices.
+              </p>
+            </div>
+          </div>
+
+          {/* In The Box */}
+          <div>
+            <h2 className="text-3xl text-black font-bold mb-6 tracking-wider">IN THE BOX</h2>
+            <div className="space-y-3">
+              <div className="flex gap-6">
+                <span className="text-orange-400 font-bold">1x</span>
+                <span className="text-gray-600">Headphone Unit</span>
+              </div>
+              <div className="flex gap-6">
+                <span className="text-orange-400 font-bold">2x</span>
+                <span className="text-gray-600">Replacement Earcups</span>
+              </div>
+              <div className="flex gap-6">
+                <span className="text-orange-400 font-bold">1x</span>
+                <span className="text-gray-600">User Manual</span>
+              </div>
+              <div className="flex gap-6">
+                <span className="text-orange-400 font-bold">1x</span>
+                <span className="text-gray-600">3.5mm 5m Audio Cable</span>
+              </div>
+              <div className="flex gap-6">
+                <span className="text-orange-400 font-bold">1x</span>
+                <span className="text-gray-600">Travel Bag</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section className="container mx-auto px-4 py-8">
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="space-y-4">
+            <img 
+              src="/assets/Bitmap (3).png" 
+              alt="Gallery 1"
+              className="w-full rounded-lg object-cover h-75"
+            />
+            <img 
+              src="/assets/Bitmap (2).png" 
+              alt="Gallery 2"
+              className="w-full rounded-lg object-cover h-75"
+            />
+          </div>
+          <img 
+            src="/assets/Bitmap (1).png" 
+            alt="Gallery 3"
+            className="w-full rounded-lg object-cover h-full"
+          />
+        </div>
+      </section>
+
+     
+      <section className="container mx-auto px-4 py-16">
+        <h2 className="text-3xl text-black font-bold text-center mb-12 tracking-wider">YOU MAY ALSO LIKE</h2>
+        <div className="grid text-black md:grid-cols-3 gap-8">
+          {[
+            { name: 'XX99 MARK I', img: '/assets/image-removebg-preview(41)-1.png' },
+            { name: 'XX59', img: '/assets/image-removebg-preview(48).png' },
+            { name: 'ZX9 SPEAKER', img: '/assets/image-removebg-preview(38)-1.png' }
+          ].map((product, i) => (
+            <div key={i} className="text-center space-y-4">
+              <div className="bg-gray-100 rounded-lg p-8">
+                <img src={product.img} alt={product.name} className="w-full object-contain h-48" />
+              </div>
+              <h3 className="font-bold tracking-wider">{product.name}</h3>
+              <button className="bg-orange-400 cursor-pointer hover:bg-orange-500 text-white px-6 py-3 font-bold tracking-wider transition">
+                SEE PRODUCT
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Categories */}
+      <Category />
+
+      {/* About */}
+      <About />
+
+      {/* Footer */}
+     <Footer />
+    </div>
+  );
+}

@@ -1,60 +1,149 @@
-"use client"
-
-import React from 'react';
-import Link from 'next/link';
-import { ShoppingCart } from 'lucide-react';
-import Nav from '@/app/components/Navbar';
-import Footer from '@/app/components/Footer';
-import Category from '@/app/components/category';
+import { useState } from 'react';
+import { ShoppingCart, Facebook, Twitter, Instagram } from 'lucide-react';
 import About from '@/app/components/About';
+import Footer from '@/app/components/Footer';
 
-export default function EarphonesCategory() {
+export default function YX1ProductPage() {
+  const [quantity, setQuantity] = useState(1);
 
+  const incrementQuantity = () => setQuantity(q => q + 1);
+  const decrementQuantity = () => setQuantity(q => Math.max(1, q - 1));
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-     <Nav />
+      {/* Header */}
+      <header className="bg-black text-white py-5 px-8">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <h1 className="text-2xl font-bold">audiophile</h1>
+          <nav className="flex gap-8 text-sm font-bold tracking-wider">
+            <a href="#" className="hover:text-orange-500">HOME</a>
+            <a href="#" className="hover:text-orange-500">HEADPHONES</a>
+            <a href="#" className="hover:text-orange-500">SPEAKERS</a>
+            <a href="#" className="hover:text-orange-500">EARPHONES</a>
+          </nav>
+          <ShoppingCart className="w-6 h-6 cursor-pointer hover:text-orange-500" />
+        </div>
+      </header>
 
-      {/* Category Header */}
-      <div className="bg-black text-white py-20 text-center">
-        <h1 className="text-5xl font-bold">EARPHONES</h1>
-      </div>
+      <div className="max-w-7xl mx-auto px-8 py-12">
+        <button className="text-gray-500 text-sm mb-8 hover:text-black">Go Back</button>
 
-      {/* Product Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="bg-gray-100 rounded-lg p-16 flex items-center justify-center">
-              <img 
-                src="/assets/Group 4.png"
-                alt="YX1 Wireless Earphones"
-                className="w-full max-w-xs object-contain"
-              />
-            </div>
-            
-            <div>
-              <p className="text-orange-500 text-sm tracking-widest mb-4">NEW PRODUCT</p>
-              <h2 className="text-4xl text-black font-bold mb-6">YX1 WIRELESS<br />EARPHONES</h2>
-              <p className="text-gray-900 mb-8 leading-relaxed">
-                Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.
-              </p>
-              <Link 
-                href="/product/yx1-wireless-earphones"
-                className="inline-block bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 font-semibold transition"
-              >
-                SEE PRODUCT
-              </Link>
+        {/* Product Section */}
+        <div className="grid md:grid-cols-2 gap-16 mb-24">
+          <div className="bg-gray-100 rounded-lg flex items-center justify-center p-12">
+            <div className="w-64 h-64 bg-gray-800 rounded-full"></div>
+          </div>
+
+          <div className="flex flex-col justify-center">
+            <p className="text-orange-500 text-sm tracking-widest mb-4">NEW PRODUCT</p>
+            <h2 className="text-4xl font-bold mb-6">YX1 WIRELESS<br />EARPHONES</h2>
+            <p className="text-gray-600 mb-8 leading-relaxed">
+              Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.
+            </p>
+            <p className="text-2xl font-bold mb-8">$ 599</p>
+
+            <div className="flex gap-4">
+              <div className="flex items-center gap-4 bg-gray-100 px-6 py-3">
+                <button onClick={decrementQuantity} className="text-gray-400 hover:text-orange-500 font-bold">-</button>
+                <span className="font-bold w-8 text-center">{quantity}</span>
+                <button onClick={incrementQuantity} className="text-gray-400 hover:text-orange-500 font-bold">+</button>
+              </div>
+              <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3 tracking-wider">
+                ADD TO CART
+              </button>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Category Cards */}
-     <Category />
+        {/* Features and In The Box */}
+        <div className="grid md:grid-cols-2 gap-16 mb-24">
+          <div>
+            <h3 className="text-2xl font-bold mb-6">FEATURES</h3>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              Experience unrivalled stereo sound thanks to innovative acoustic technology. With improved ergonomics designed for full day wearing, these revolutionary earphones have been finely crafted to provide you with the perfect fit, delivering complete comfort all day long while enjoying exceptional noise isolation and truly immersive sound.
+            </p>
+            <p className="text-gray-600 leading-relaxed">
+              The YX1 Wireless Earphones features customizable controls for volume, music, calls, and voice assistants built into both earbuds. The new 7-hour battery life can be extended up to 28 hours with the charging case, giving you uninterrupted play time. Exquisite craftsmanship with a splash resistant design now available in an all new white and grey color scheme as well as the popular classic black.
+            </p>
+          </div>
 
-      {/* About Section */}
-    <About />
+          <div>
+            <h3 className="text-2xl font-bold mb-6">IN THE BOX</h3>
+            <ul className="space-y-2">
+              <li className="flex gap-6">
+                <span className="text-orange-500 font-bold">2x</span>
+                <span className="text-gray-600">Earphone Unit</span>
+              </li>
+              <li className="flex gap-6">
+                <span className="text-orange-500 font-bold">6x</span>
+                <span className="text-gray-600">Multi-size Earplugs</span>
+              </li>
+              <li className="flex gap-6">
+                <span className="text-orange-500 font-bold">1x</span>
+                <span className="text-gray-600">User Manual</span>
+              </li>
+              <li className="flex gap-6">
+                <span className="text-orange-500 font-bold">1x</span>
+                <span className="text-gray-600">USB-C Charging Cable</span>
+              </li>
+              <li className="flex gap-6">
+                <span className="text-orange-500 font-bold">1x</span>
+                <span className="text-gray-600">Travel Pouch</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Product Gallery */}
+        <div className="grid grid-cols-2 gap-4 mb-24">
+          <div className="space-y-4">
+            <div className="bg-gray-900 rounded-lg h-64"></div>
+            <div className="bg-gray-900 rounded-lg h-64"></div>
+          </div>
+          <div className="bg-gray-900 rounded-lg"></div>
+        </div>
+
+        {/* You May Also Like */}
+        <div className="mb-24">
+          <h3 className="text-3xl font-bold text-center mb-12">YOU MAY ALSO LIKE</h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { name: 'XX99 MARK I', image: 'headphones' },
+              { name: 'XX59', image: 'headphones' },
+              { name: 'ZX9 SPEAKER', image: 'speaker' }
+            ].map((product, index) => (
+              <div key={index} className="text-center">
+                <div className="bg-gray-100 rounded-lg p-8 mb-6 h-64 flex items-center justify-center">
+                  <div className="text-6xl">🎧</div>
+                </div>
+                <h4 className="font-bold mb-4">{product.name}</h4>
+                <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 text-sm tracking-wider">
+                  SEE PRODUCT
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Category Cards */}
+        <div className="grid md:grid-cols-3 gap-8 mb-24">
+          {[
+            { name: 'HEADPHONES', icon: '🎧' },
+            { name: 'SPEAKERS', icon: '🔊' },
+            { name: 'EARPHONES', icon: '⚫' }
+          ].map((category, index) => (
+            <div key={index} className="bg-gray-100 rounded-lg p-8 text-center">
+              <div className="text-6xl mb-4">{category.icon}</div>
+              <h4 className="font-bold mb-2">{category.name}</h4>
+              <button className="text-sm text-gray-600 hover:text-orange-500 font-bold">
+                SHOP →
+              </button>
+            </div>
+          ))}
+        </div>
+
+        {/* About */}
+       <About/>
 
       {/* Footer */}
       <Footer />

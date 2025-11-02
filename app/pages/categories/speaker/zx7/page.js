@@ -1,0 +1,211 @@
+"use client"
+import React, { useState } from 'react';
+import { ShoppingCart, Plus, Minus, ChevronRight } from 'lucide-react';
+import Nav from '@/app/components/Navbar'
+import Footer from '@/app/components/Footer';
+import Category from '@/app/components/category';
+import About from '@/app/components/About';
+import Link from 'next/link'
+
+
+
+
+
+
+export default function Audiophilezx7SpeakerPage() {
+  const [quantity, setQuantity] = useState(1);
+
+  const incrementQuantity = () => setQuantity(q => q + 1);
+  const decrementQuantity = () => setQuantity(q => Math.max(1, q - 1));
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+    <Nav />
+
+      {/* Main Content */}
+      <main className="max-w-7xl text-black mx-auto px-6 lg:px-12">
+        {/* Breadcrumb */}
+        <div className="py-8">
+          <Link href='/'>
+          <button className="text-gray-500 cursor-pointer text-sm hover:text-gray-700 transition-colors">
+            Go Back
+          </button>
+          </Link>
+        </div>
+
+        {/* Product Section */}
+        <section className="grid lg:grid-cols-2 gap-16 py-8 mb-20">
+          {/* Product Image */}
+          <div className="bg-gray-100 rounded-lg flex items-center justify-center p-12 lg:p-20">
+            <img 
+              src="/assets/image-removebg-preview(49).png" 
+              alt="zx7 Speaker"
+              className="w-full max-w-sm object-contain"
+            />
+          </div>
+
+          {/* Product Info */}
+          <div className="flex flex-col justify-center space-y-8">
+            <p className="text-orange-400 text-sm font-normal tracking-[0.6em] uppercase">
+              New Product
+            </p>
+            <h1 className="text-4xl lg:text-5xl font-bold tracking-wide uppercase leading-tight">
+              zx7<br />Speaker
+            </h1>
+            <p className="text-gray-600 text-base leading-relaxed">
+              Upgrade your sound system with the all new zx7 active 
+              speaker. It's a bookshelf speaker system that offers truly 
+              wireless connectivity -- creating new possibilities for more 
+              pleasing and practical audio setups.
+            </p>
+            <p className="text-lg font-bold tracking-wider">$ 4,500</p>
+            
+            {/* Quantity and Add to Cart */}
+            <div className="flex gap-4">
+              <div className="flex items-center bg-gray-100">
+                <button 
+                  onClick={decrementQuantity}
+                  className="px-5 py-4 cursor-pointer text-gray-500 hover:text-orange-400 transition-colors"
+                  aria-label="Decrease quantity"
+                >
+                  <Minus size={14} strokeWidth={3} />
+                </button>
+                <span className="px-6 py-4 font-bold text-sm min-w-[3rem] text-center">
+                  {quantity}
+                </span>
+                <button 
+                  onClick={incrementQuantity}
+                  className="px-5 py-4 cursor-pointer text-gray-500 hover:text-orange-400 transition-colors"
+                  aria-label="Increase quantity"
+                >
+                  <Plus size={14} strokeWidth={3} />
+                </button>
+              </div>
+              <button className="bg-orange-400 cursor-pointer hover:bg-orange-500 text-white px-8 font-bold text-xs tracking-widest uppercase transition-colors">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Features and In The Box */}
+        <section className="grid lg:grid-cols-5 gap-16 lg:gap-24 py-16 mb-20">
+          {/* Features */}
+          <div className="lg:col-span-3">
+            <h2 className="text-3xl font-bold mb-8 tracking-wider uppercase">Features</h2>
+            <div className="space-y-6 text-gray-600 text-base leading-relaxed">
+              <p>
+                Connect via Bluetooth or nearly any wired source. This speaker features optical, 
+                digital coaxial, USB Type-B, stereo RCA, and stereo 3.5mm inputs, allowing you to have 
+                up to 5 wired source devices connected for easy audio switching. Improved bluetooth 
+                enables quick and more stable connectivity, so you can enjoy your music every time you 
+                want without audio quality drops or lag time.
+              </p>
+              <p>
+                Discover clear, more natural sounding highs than the competition with zx7's signature 
+                planar diaphragm tweeter. Equally important is its powerful room-shaking bass courtesy of a 
+                6.5" aluminum alloy bass unit. You'll be able to enjoy equal sound quality whether in a 
+                large room or small den. Furthermore, you will experience new sensations from old songs 
+                since it can respond to even the subtle waveforms.
+              </p>
+            </div>
+          </div>
+
+          {/* In The Box */}
+          <div className="lg:col-span-2 ">
+            <h2 className="text-3xl font-bold mb-8 tracking-wider uppercase">In the Box</h2>
+            <div className="space-y-3">
+              <div className="flex gap-6">
+                <span className="text-orange-400 font-bold text-base w-8">2x</span>
+                <span className="text-gray-600 text-base">Speaker Unit</span>
+              </div>
+              <div className="flex gap-6">
+                <span className="text-orange-400 font-bold text-base w-8">2x</span>
+                <span className="text-gray-600 text-base">Speaker Cloth Panel</span>
+              </div>
+              <div className="flex gap-6">
+                <span className="text-orange-400 font-bold text-base w-8">1x</span>
+                <span className="text-gray-600 text-base">User Manual</span>
+              </div>
+              <div className="flex gap-6">
+                <span className="text-orange-400 font-bold text-base w-8">1x</span>
+                <span className="text-gray-600 text-base">3.5mm 10m Audio Cable</span>
+              </div>
+              <div className="flex gap-6">
+                <span className="text-orange-400 font-bold text-base w-8">1x</span>
+                <span className="text-gray-600 text-base">10m Optical Cable</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Gallery */}
+        <section className="py-16 mb-20">
+          <div className="grid lg:grid-cols-5 gap-6 lg:gap-8">
+            <div className="lg:col-span-2 space-y-6 lg:space-y-8">
+              <div className="bg-gray-100 rounded-lg overflow-hidden aspect-[4/3]">
+                <img 
+                  src="/assets/Bitmap (14).png" 
+                  alt="Speaker close-up"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="bg-gray-100 rounded-lg overflow-hidden aspect-[4/3]">
+                <img 
+                  src="/assets/Bitmap (12).png" 
+                  alt="Room setup"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </div>
+            <div className="lg:col-span-3 bg-gray-100 rounded-lg overflow-hidden aspect-[4/3] lg:aspect-auto">
+              <img 
+                src="/assets/Bitmap (13).png" 
+                alt="Speaker pair"
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* You May Also Like */}
+        <section className="py-16 mb-20">
+          <h2 className="text-3xl font-bold text-center mb-16 tracking-wider uppercase">
+            You May Also Like
+          </h2>
+          <div className="grid md:grid-cols-3 gap-12 lg:gap-8">
+            {[
+              { name: 'ZX9 Speaker', img: '/assets/image-removebg-preview(38).png' },
+              { name: 'XX99 Mark I', img: '/assets/image-removebg-preview(41).png' },
+              { name: 'XX59', img: '/assets/image-removebg-preview(48).png' }
+            ].map((product, i) => (
+              <div key={i} className="text-center space-y-8">
+                <div className="bg-gray-100 rounded-lg p-12 flex items-center justify-center aspect-square">
+                  <img 
+                    src={product.img} 
+                    alt={product.name} 
+                    className="w-full max-w-[200px] object-contain"
+                  />
+                </div>
+                <h3 className="font-bold tracking-widest text-2xl uppercase">{product.name}</h3>
+                <button className="bg-orange-400 cursor-pointer hover:bg-orange-500 text-white px-8 py-4 font-bold text-xs tracking-widest uppercase transition-colors">
+                  See Product
+                </button>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Categories */}
+        <Category />
+
+        {/* About */}
+        <About />
+      </main>
+
+      {/* Footer */}
+      <Footer />
+    </div>
+  );
+}

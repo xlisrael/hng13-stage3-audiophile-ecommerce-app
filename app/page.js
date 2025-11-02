@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import { ShoppingCart, ChevronRight } from 'lucide-react';
+import { ShoppingCart, ChevronRight, Router } from 'lucide-react';
 import Link from "next/link"
 import Category from './components/category';
 import Nav from "@/app/components/Navbar"
@@ -10,6 +10,10 @@ import About from './components/About';
 
 
 export default function AudiophileSite() {
+
+
+
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -20,16 +24,19 @@ export default function AudiophileSite() {
       <section className="bg-black text-white py-20 px-6 hero">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-gray-400 text-sm tracking-widest mb-4">NEW PRODUCT</p>
+            <p className="text-gray-400 cursor-pointer text-sm tracking-widest mb-4">NEW PRODUCT</p>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
               XX99 MARK II<br />HEADPHONES
             </h1>
             <p className="text-gray-400 mb-8 max-w-md">
               Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
             </p>
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 font-semibold transition">
+            <Link href='/pages/categories/headphones/xx99mark2'>
+            <button className="bg-orange-500 cursor-pointer hover:bg-orange-600 text-white px-8 py-3 font-semibold transition"
+            >
               SEE PRODUCT
             </button>
+              </Link>
           </div>
            {/* <div className="flex justify-center">
             <img 
@@ -62,9 +69,11 @@ export default function AudiophileSite() {
               <p className="mb-8 max-w-md text-white/90">
                 Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.
               </p>
-              <button className="bg-black hover:bg-gray-900 text-white px-8 py-3 font-semibold transition">
+              <Link href='/pages/categories/speaker/zx9'>
+              <button className="bg-black cursor-pointer hover:bg-gray-900 text-white px-8 py-3 font-semibold transition">
                 SEE PRODUCT
               </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -81,10 +90,12 @@ export default function AudiophileSite() {
             />
             <div className="absolute inset-0 flex items-center px-12">
               <div>
-                <h2 className="text-3xl font-bold mb-6">ZX7 SPEAKER</h2>
-                <button className="border-2 border-black hover:bg-black hover:text-white px-8 py-3 font-semibold transition">
+                <h2 className="text-3xl cursor-pointer font-bold mb-6">ZX7 SPEAKER</h2>
+                <Link href="/pages/categories/speaker/zx7">
+                <button className="border-2 cursor-pointer border-black hover:bg-black hover:text-white px-8 py-3 font-semibold transition">
                   SEE PRODUCT
                 </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -104,7 +115,7 @@ export default function AudiophileSite() {
           <div className="bg-gray-100 rounded-lg flex items-center px-12">
             <div>
               <h2 className="text-3xl text-black font-bold mb-6">YX1 EARPHONES</h2>
-              <button className="border-2 border-black text-black hover:bg-black hover:text-white px-8 py-3 font-semibold transition">
+              <button className="border-2 cursor-pointer border-black text-black hover:bg-black hover:text-white px-8 py-3 font-semibold transition">
                 SEE PRODUCT
               </button>
             </div>

@@ -1,0 +1,303 @@
+import React, { useState } from 'react';
+import { ShoppingCart, Plus, Minus, ChevronRight } from 'lucide-react';
+
+export default function AudiophileXX99MarkIPage() {
+  const [quantity, setQuantity] = useState(1);
+
+  const incrementQuantity = () => setQuantity(q => q + 1);
+  const decrementQuantity = () => setQuantity(q => Math.max(1, q - 1));
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+      <header className="bg-black border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="flex items-center justify-between h-20">
+            <div className="text-white text-2xl font-bold lowercase tracking-tight">
+              audiophile
+            </div>
+            <nav className="hidden md:flex gap-10 text-white text-xs font-bold tracking-widest">
+              <a href="#" className="hover:text-orange-400 transition-colors">HOME</a>
+              <a href="#" className="hover:text-orange-400 transition-colors">HEADPHONES</a>
+              <a href="#" className="hover:text-orange-400 transition-colors">SPEAKERS</a>
+              <a href="#" className="hover:text-orange-400 transition-colors">EARPHONES</a>
+            </nav>
+            <button className="text-white hover:text-orange-400 transition-colors">
+              <ShoppingCart size={24} strokeWidth={1.5} />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto px-6 lg:px-12">
+        {/* Breadcrumb */}
+        <div className="py-8">
+          <button className="text-gray-500 text-sm hover:text-gray-700 transition-colors">
+            Go Back
+          </button>
+        </div>
+
+        {/* Product Section */}
+        <section className="grid lg:grid-cols-2 gap-16 py-8 mb-20">
+          {/* Product Image */}
+          <div className="bg-gray-100 rounded-lg flex items-center justify-center p-12 lg:p-20">
+            <img 
+              src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&h=800&fit=crop&q=80" 
+              alt="XX99 Mark I Headphones"
+              className="w-full max-w-sm object-contain"
+            />
+          </div>
+
+          {/* Product Info */}
+          <div className="flex flex-col justify-center space-y-8">
+            <h1 className="text-4xl lg:text-5xl font-bold tracking-wide uppercase leading-tight">
+              XX99 Mark I<br />Headphones
+            </h1>
+            <p className="text-gray-600 text-base leading-relaxed">
+              As the gold standard for headphones, the classic XX99 Mark I 
+              offers detailed and accurate audio reproduction for audiophiles, 
+              mixing engineers, and music aficionados alike in studios and on 
+              the go.
+            </p>
+            <p className="text-lg font-bold tracking-wider">$ 1,750</p>
+            
+            {/* Quantity and Add to Cart */}
+            <div className="flex gap-4">
+              <div className="flex items-center bg-gray-100">
+                <button 
+                  onClick={decrementQuantity}
+                  className="px-5 py-4 text-gray-500 hover:text-orange-400 transition-colors"
+                  aria-label="Decrease quantity"
+                >
+                  <Minus size={14} strokeWidth={3} />
+                </button>
+                <span className="px-6 py-4 font-bold text-sm min-w-[3rem] text-center">
+                  {quantity}
+                </span>
+                <button 
+                  onClick={incrementQuantity}
+                  className="px-5 py-4 text-gray-500 hover:text-orange-400 transition-colors"
+                  aria-label="Increase quantity"
+                >
+                  <Plus size={14} strokeWidth={3} />
+                </button>
+              </div>
+              <button className="bg-orange-400 hover:bg-orange-500 text-white px-8 font-bold text-xs tracking-widest uppercase transition-colors">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Features and In The Box */}
+        <section className="grid lg:grid-cols-5 gap-16 lg:gap-24 py-16 mb-20">
+          {/* Features */}
+          <div className="lg:col-span-3">
+            <h2 className="text-3xl font-bold mb-8 tracking-wider uppercase">Features</h2>
+            <div className="space-y-6 text-gray-600 text-base leading-relaxed">
+              <p>
+                As the headphones all others are measured against, the XX99 Mark I demonstrates over 
+                five decades of audio expertise, manifesting in the form of premium materials and build 
+                quality. Featuring aluminum, leather, and premium materials, you'll feel at ease with 
+                its classic design. This headphone will elevate your listening experience to a whole new 
+                level.
+              </p>
+              <p>
+                Every detail of this headphone was engineered for impeccable sound quality, excellent durability, and 
+                ultimate comfort. It's equipped with a proprietary 40mm gold-plated custom driver unit, ensuring 
+                pinpoint accuracy for monitoring and mixing. Closed-back on-ear design delivers robust low-end 
+                and uncolored clarity. The custom driver unit also offers an extended 5 to 28kHz frequency response 
+                for effortless recording of the full spectrum of sound. Soft memory foam ear cushions are layered with 
+                synthetic leather for maximum durability and comfort while listening to your favorite tracks at any 
+                time.
+              </p>
+            </div>
+          </div>
+
+          {/* In The Box */}
+          <div className="lg:col-span-2">
+            <h2 className="text-3xl font-bold mb-8 tracking-wider uppercase">In the Box</h2>
+            <div className="space-y-3">
+              <div className="flex gap-6">
+                <span className="text-orange-400 font-bold text-base w-8">1x</span>
+                <span className="text-gray-600 text-base">Headphone Unit</span>
+              </div>
+              <div className="flex gap-6">
+                <span className="text-orange-400 font-bold text-base w-8">2x</span>
+                <span className="text-gray-600 text-base">Replacement Earcups</span>
+              </div>
+              <div className="flex gap-6">
+                <span className="text-orange-400 font-bold text-base w-8">1x</span>
+                <span className="text-gray-600 text-base">User Manual</span>
+              </div>
+              <div className="flex gap-6">
+                <span className="text-orange-400 font-bold text-base w-8">1x</span>
+                <span className="text-gray-600 text-base">3.5mm 5m Audio Cable</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Gallery */}
+        <section className="py-16 mb-20">
+          <div className="grid lg:grid-cols-5 gap-6 lg:gap-8">
+            <div className="lg:col-span-2 space-y-6 lg:space-y-8">
+              <div className="bg-gray-100 rounded-lg overflow-hidden aspect-[4/3]">
+                <img 
+                  src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&h=450&fit=crop&q=80" 
+                  alt="Studio microphone"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="bg-gray-100 rounded-lg overflow-hidden aspect-[4/3]">
+                <img 
+                  src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&h=450&fit=crop&q=80" 
+                  alt="Headphones on desk"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <div className="lg:col-span-3 bg-gray-100 rounded-lg overflow-hidden aspect-[4/3] lg:aspect-auto">
+              <img 
+                src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&h=1000&fit=crop&q=80" 
+                alt="XX99 Mark I detail"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* You May Also Like */}
+        <section className="py-16 mb-20">
+          <h2 className="text-3xl font-bold text-center mb-16 tracking-wider uppercase">
+            You May Also Like
+          </h2>
+          <div className="grid md:grid-cols-3 gap-12 lg:gap-8">
+            {[
+              { name: 'XX99 Mark II', img: 'https://images.unsplash.com/photo-1545127398-14699f92334b?w=400&h=400&fit=crop&q=80' },
+              { name: 'XX59', img: 'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?w=400&h=400&fit=crop&q=80' },
+              { name: 'ZX9 Speaker', img: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop&q=80' }
+            ].map((product, i) => (
+              <div key={i} className="text-center space-y-8">
+                <div className="bg-gray-100 rounded-lg p-12 flex items-center justify-center aspect-square">
+                  <img 
+                    src={product.img} 
+                    alt={product.name} 
+                    className="w-full max-w-[200px] object-contain"
+                  />
+                </div>
+                <h3 className="font-bold tracking-widest text-2xl uppercase">{product.name}</h3>
+                <button className="bg-orange-400 hover:bg-orange-500 text-white px-8 py-4 font-bold text-xs tracking-widest uppercase transition-colors">
+                  See Product
+                </button>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Categories */}
+        <section className="py-16 mb-20">
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-8">
+            {[
+              { name: 'Headphones', img: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=200&fit=crop&q=80' },
+              { name: 'Speakers', img: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=300&h=200&fit=crop&q=80' },
+              { name: 'Earphones', img: 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=300&h=200&fit=crop&q=80' }
+            ].map((category, i) => (
+              <div key={i} className="bg-gray-100 rounded-lg text-center pt-20 pb-6 relative">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/3 w-40 h-40">
+                  <img 
+                    src={category.img} 
+                    alt={category.name} 
+                    className="w-full h-full object-contain drop-shadow-lg"
+                  />
+                </div>
+                <h3 className="font-bold tracking-wider text-lg uppercase mb-4 mt-12">
+                  {category.name}
+                </h3>
+                <button className="text-gray-500 hover:text-orange-400 text-sm font-bold tracking-wider uppercase transition-colors inline-flex items-center gap-2 group">
+                  Shop
+                  <ChevronRight size={16} className="text-orange-400 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Banner */}
+        <section className="py-16 mb-32">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8 lg:order-1">
+              <h2 className="text-4xl lg:text-5xl font-bold tracking-wide uppercase leading-tight">
+                Bringing You The<br />
+                <span className="text-orange-400">Best Audio Gear</span>
+              </h2>
+              <p className="text-gray-600 text-base leading-relaxed">
+                Located at the heart of New York City, Audiophile is the premier 
+                store for high end headphones, earphones, speakers, and audio 
+                accessories. We have a large showroom and luxury demonstration 
+                rooms available for you to browse and experience a wide range of 
+                our products. Stop by our store to meet some of the fantastic 
+                people who make Audiophile the best place to buy your portable 
+                audio equipment.
+              </p>
+            </div>
+            <div className="rounded-lg overflow-hidden lg:order-2">
+              <img 
+                src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=800&h=800&fit=crop&q=80" 
+                alt="Best Audio Gear"
+                className="w-full object-cover aspect-square"
+              />
+            </div>
+          </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-black text-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-16 pb-12">
+          <div className="w-24 h-1 bg-orange-400 mb-12"></div>
+          <div className="grid lg:grid-cols-2 gap-12 mb-12">
+            <div>
+              <div className="text-2xl font-bold lowercase tracking-tight mb-10">
+                audiophile
+              </div>
+              <p className="text-gray-400 text-base leading-relaxed max-w-xl">
+                Audiophile is an all in one stop to fulfill your audio needs. 
+                We're a small team of music lovers and sound specialists who are 
+                devoted to helping you get the most out of personal audio. Come 
+                and visit our demo facility - we're open 7 days a week.
+              </p>
+            </div>
+            <div className="flex flex-col lg:items-end justify-between">
+              <nav className="flex flex-wrap gap-8 text-xs font-bold tracking-widest mb-8 lg:mb-0">
+                <a href="#" className="hover:text-orange-400 transition-colors">HOME</a>
+                <a href="#" className="hover:text-orange-400 transition-colors">HEADPHONES</a>
+                <a href="#" className="hover:text-orange-400 transition-colors">SPEAKERS</a>
+                <a href="#" className="hover:text-orange-400 transition-colors">EARPHONES</a>
+              </nav>
+              <div className="flex gap-4">
+                <a href="#" className="hover:text-orange-400 transition-colors" aria-label="Facebook">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                </a>
+                <a href="#" className="hover:text-orange-400 transition-colors" aria-label="Twitter">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                  </svg>
+                </a>
+                <a href="#" className="hover:text-orange-400 transition-colors" aria-label="Instagram">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <p className="text-gray-400 text-base">Copyright 2021. All Rights Reserved</p>
+        </div>
+      </footer>
+    </div>
+  );
+}
