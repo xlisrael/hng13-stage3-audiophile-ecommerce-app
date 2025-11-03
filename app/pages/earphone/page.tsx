@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link'
 import { ShoppingCart, Facebook, Twitter, Instagram } from 'lucide-react';
 import About from '@/app/components/About';
@@ -7,7 +7,7 @@ import Footer from '@/app/components/Footer';
 import Navbar from '@/app/components/Navbar';
 import Category from '@/app/components/category';
 
-export default function YX1ProductPage() {
+export default function YX1ProductPage(): React.ReactElement {
   const [quantity, setQuantity] = useState(1);
 
   const incrementQuantity = () => setQuantity(q => q + 1);

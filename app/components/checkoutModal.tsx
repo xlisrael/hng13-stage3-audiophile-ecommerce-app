@@ -4,15 +4,23 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { ShoppingCart, X, Minus, Plus } from 'lucide-react';
 
-export default function ProductWithCartModal() {
-  const [showCart, setShowCart] = useState(true);
-  const [cartItems, setCartItems] = useState([
+interface CartItem {
+  id: number;
+  name: string;
+  price: number;
+  quantity: number;
+  image: string;
+}
+
+export default function ProductWithCartModal(): React.ReactElement {
+  const [showCart, setShowCart] = useState<boolean>(true);
+  const [cartItems, setCartItems] = useState<CartItem[]>([
     { id: 1, name: 'XX99 MK II', price: 2999, quantity: 1, image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=100&h=100&fit=crop' },
     { id: 2, name: 'XX59', price: 899, quantity: 2, image: 'https://images.unsplash.com/photo-1484704849700-f032a568e944?w=100&h=100&fit=crop' },
     { id: 3, name: 'YX1', price: 599, quantity: 1, image: 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=100&h=100&fit=crop' }
   ]);
 
-  const updateQuantity = (id, change) => {
+  const updateQuantity = (id: number, change: number): void => {
     setCartItems(items =>
       items.map(item =>
         item.id === id

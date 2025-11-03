@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Facebook, Twitter, Instagram } from "lucide-react";
+import React from "react";
 
-export default function Footer() {
+export default function Footer(): React.ReactElement {
   return (
     <footer className="bg-black text-white py-12 px-6 md:px-12">
       <div className="max-w-7xl mx-auto text-center md:text-left space-y-8">

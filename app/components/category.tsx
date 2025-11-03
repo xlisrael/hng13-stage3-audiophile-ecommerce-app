@@ -2,7 +2,13 @@ import React from 'react'
 import Link from 'next/link'
 import { ShoppingCart, ChevronRight } from 'lucide-react';
 
-const category = () => {
+interface CategoryItem {
+  name: string;
+  img: string;
+  href: string;
+}
+
+const Category = (): React.ReactElement => {
   return (
     <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto text-bg-dark object-fit-contain grid md:grid-cols-3 gap-8">
@@ -30,4 +36,4 @@ const category = () => {
   )
 }
 
-export default category
+export default Category

@@ -7,9 +7,16 @@ import Footer from '@/app/components/Footer';
 import About from '@/app/components/About';
 import Category from '@/app/components/category';
 
+interface Product {
+  id: number;
+  slug: string;
+  name: string;
+  new: boolean;
+  description: string;
+  image: string;
+}
 
-
-export default function SpeakersCategory() {
+export default function SpeakersCategory(): React.ReactElement {
   const products = [
     {
       id: 1,

@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ShoppingCart, Facebook, Twitter, Instagram } from "lucide-react";
@@ -7,8 +8,20 @@ import Footer from "../../components/Footer";
 import About from "../../components/About";
 import Category from "../../components/category";
 
+interface Category {
+  name: string;
+  image: string;
+}
 
-export default function HeadphonesPage() {
+interface Product {
+  id: number;
+  name: string;
+  description: string;
+  image: string;
+  isNew: boolean;
+}
+
+export default function HeadphonesPage(): React.ReactElement {
   const categories = [
     { name: "HEADPHONES", image: "/assets/image-removebg-preview(41)-1.png" },
     { name: "SPEAKERS", image: "/assets/image-removebg-preview(38).png" },

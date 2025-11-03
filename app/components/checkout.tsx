@@ -4,10 +4,22 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Check } from 'lucide-react';
 
-export default function CheckoutPage() {
-  const [showModal, setShowModal] = useState(false);
-  const [paymentMethod, setPaymentMethod] = useState('cash');
-  const [formData, setFormData] = useState({
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  address: string;
+  zipCode: string;
+  city: string;
+  country: string;
+  eMoneyNumber: string;
+  eMoneyPin: string;
+}
+
+export default function CheckoutPage(): React.ReactElement {
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [paymentMethod, setPaymentMethod] = useState<'cash' | 'e-money'>('cash');
+  const [formData, setFormData] = useState<FormData>({
     name: 'Alexei Ward',
     email: 'alexei@gmail.com',
     phone: '+1 202-555-0136',
