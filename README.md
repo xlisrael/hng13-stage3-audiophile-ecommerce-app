@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Audiophile E-Commerce Website
+
+A premium audio equipment e-commerce website built with Next.js 14, and Typescript.
+
+## Features
+
+- 🎨 Modern, responsive design
+- 🛒 Shopping cart functionality
+- 📱 Mobile-first approach
+- 🎯 Product categories (Headphones, Speakers, Earphones)
+- 📦 Product detail pages
+- 💳 Checkout process
+- ✨ Smooth animations and transitions
+
+## Tech Stack
+
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Font:** Manrope (Google Fonts)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ installed
+- npm or yarn package manager
+
+### Installation
+
+1. **Clone or create the project:**
+
+```bash
+npx create-next-app@latest audiophile-ecommerce --typescript --tailwind --app
+cd audiophile-ecommerce
+```
+
+2. **Install dependencies:**
+
+```bash
+npm install
+```
+
+6. **Run the development server:**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+7. **Open your browser:**
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Navigate to [http://localhost:3000](http://localhost:3000)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Pages
 
-To learn more about Next.js, take a look at the following resources:
+- **Home :** Hero section, featured products, categories
+- **Category Pages :** Product listings by category
+- **Product Detail :** Individual product information
+- **Checkout :** Order form and summary
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Components
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Navbar:** Site navigation with cart icon
+- **Footer:** Site footer with links and social media
+- **CategoryCard:** Reusable category card component
+- **AboutSection:** Company information section
+- **CartModal:** Shopping cart overlay
 
-## Deploy on Vercel
+## Styling
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The project uses Tailwind CSS with custom configuration:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Custom colors: dark-orange, light-orange, very-dark, etc.
+- Custom components: btn-primary, btn-secondary, btn-tertiary
+- Responsive breakpoints
+- Custom container styling
+
+## Data Management
+
+Product data is stored in `lib/data.ts` and includes:
+- Product details
+- Images (mobile, tablet, desktop)
+- Features and specifications
+- Gallery images
+- Related products
+
+## Building for Production
+
+```bash
+npm run build
+npm start
+```
+
+## Notes
+
+- Images are expected to be in the `public/assets/` directory
+- The cart uses in-memory state (no persistence)
+- No backend or API integration (static data only)
+- Form validation is basic (HTML5 validation)
