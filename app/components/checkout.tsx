@@ -171,7 +171,7 @@ export default function CheckoutPage(): React.ReactElement {
                       name="payment"
                       value="e-money"
                       checked={paymentMethod === 'e-money'}
-                      onChange={(e) => setPaymentMethod(e.target.value)}
+                      onChange={(e) => setPaymentMethod(e.target.value as 'cash' | 'e-money')}
                       className="mr-4"
                     />
                     <span className="font-semibold">e-Money</span>
@@ -182,7 +182,7 @@ export default function CheckoutPage(): React.ReactElement {
                       name="payment"
                       value="cash"
                       checked={paymentMethod === 'cash'}
-                      onChange={(e) => setPaymentMethod(e.target.value)}
+                      onChange={(e) => setPaymentMethod(e.target.value as 'cash' | 'e-money')}
                       className="mr-4"
                     />
                     <span className="font-semibold">Cash on Delivery</span>
