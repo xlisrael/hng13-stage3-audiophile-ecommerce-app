@@ -190,7 +190,7 @@ export default function CheckoutPage(): React.ReactElement {
                 </div>
               </div>
 
-              {paymentMethod === 'emoney' && (
+              {paymentMethod === 'e-money' && (
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-semibold mb-2">e-Money Number</label>
